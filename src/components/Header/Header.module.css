@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: rgba(128, 128, 128, 0.33) 1px solid;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.basketBlock > a {
+    font-size: 30px;
+}
+
+nav {
+    font-size: 20px;
+}
