@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header/Header'
-import Products from './components/Products/Products'
+import Home from './pages/Home/Home'
+import Layout from './components/Layout/Layout'
+
 import axios from 'axios'
 
 const instance = axios.create({
@@ -20,13 +21,12 @@ function App() {
   console.log(products)
 
   return (
-    <div className='container'>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<Products products={products}/>}></Route>
-        <Route path='/basket'/>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+        <Route index element={<Home products={products}/>}/>
+        <Route path='/basket' element={<div>Basket Page</div>}/>
+      </Route>
+    </Routes>
   )
 }
 

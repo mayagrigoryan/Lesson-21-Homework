@@ -1,64 +1,67 @@
 .productContainer {
-    width: 100%;
-    max-width: 300px;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
 }
 
 .productContainer img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
+  width: 200px;
+  height: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .productContainer h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 .productContainer .price {
-    font-size: 1.2rem;
-    color: #2f9d9d;
-    margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #2f9d9d;
+  margin-bottom: 10px;
 }
 
 .productContainer p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.4;
-    margin: 0;
-    padding: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
 }
 
 .productContainer button {
-    background-color: #2f9d9d;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .productContainer button:hover {
-    background-color: #249b8c; 
-  }
-  
-  .productContainer button:active {
-    transform: scale(0.98);
-  }
-  
-  .productContainer button:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(47, 157, 157, 0.5);
-  }
+  background-color: #2f9d9d;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.productContainer button:hover {
+  background-color: #249b8c;
+}
+
+.productContainer button:active {
+  transform: scale(0.98);
+}
+
+.productContainer button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(47, 157, 157, 0.5);
+}
