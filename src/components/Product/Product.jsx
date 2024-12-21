@@ -1,11 +1,12 @@
 import React from 'react'
 import style from './Product.module.css'
 
-function Product({ product }) {
+function Product({ product, addToBasket }) {
+  const titleLength = 20
   return (
     <div className={style.productContainer}>
       <div>
-        <h1>{product.title}</h1>
+        <h1>{product.title.length >= titleLength ? `${product.title.slice(0, titleLength)}...` : product.title}</h1>
       </div>
       <div>
         <img src={product.image} alt={product.title} />
@@ -16,7 +17,7 @@ function Product({ product }) {
       <div>
         <p>{product.description}</p>
       </div>
-      <button>Add to Cart</button>
+      <button onClick={() => addToBasket(product)}>Add to Cart</button>
     </div>
   )
 }
