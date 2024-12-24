@@ -1,9 +1,9 @@
 import React from 'react'
 import BasketProduct from '../../components/BasketProduct/BasketProduct'
 
-function BasketPage({ basket }) {
+function BasketPage({ basket, changeBasket }) {
   return (
-    <BasketProduct basket={basket}/>
+    <BasketProduct basket={basket} changeBasket={changeBasket}/>
   )
 }
 

@@ -40,7 +40,7 @@ function App() {
               cartPrice: el.price + el.cartPrice
             }
           } else {
-            return basket
+            return el
           }
         }))
       }
@@ -53,14 +53,25 @@ function App() {
     }
   }
 
-  console.log(basket)
-
+  const changeBasket = (count, id) => {
+    setBasket(basket.map((el) => {
+      if(el.id === id) {
+        return {
+          ...el,
+          count : count,
+          cartPrice: el.price * count
+        }
+      } else {
+        return el
+      }
+    }))
+  }
 
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<HomePage products={products} addToBasket={addToBasket} />} />
-        <Route path='/basket' element={<BasketPage basket={basket} />} />
+        <Route path='/basket' element={<BasketPage basket={basket} changeBasket={changeBasket}/>} />
       </Route>
     </Routes>
   )
