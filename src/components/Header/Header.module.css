@@ -1,6 +1,7 @@
 header {
+    padding: 0 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-bottom: rgba(128, 128, 128, 0.33) 1px solid;
 }
@@ -10,10 +11,25 @@ img {
     height: 150px;
 }
 
-.basketBlock > a {
-    font-size: 30px;
+.basketBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    a, svg {
+        font-size: 30px;
+        vertical-align: middle;
+    }
+    sup {
+        vertical-align: middle;
+        font-size: 20px;
+    }
 }
 
 nav {
     font-size: 20px;
+}
+
+.disabledLink {
+    pointer-events: none;
 }

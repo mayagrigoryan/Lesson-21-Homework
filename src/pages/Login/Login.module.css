@@ -1,0 +1,56 @@
+.inputs {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #2f9d9d;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.loginButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #2f9d9d;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.buttonWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    margin-bottom: 10px;
+}

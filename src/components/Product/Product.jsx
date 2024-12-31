@@ -1,5 +1,7 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import style from './Product.module.css'
+import AddToBasket from '../AddToBasket/AddToBasket'
 
 function Product({ product, addToBasket }) {
   const titleLength = 20
@@ -8,16 +10,16 @@ function Product({ product, addToBasket }) {
       <div>
         <h1>{product.title.length >= titleLength ? `${product.title.slice(0, titleLength)}...` : product.title}</h1>
       </div>
-      <div>
+      <NavLink to={`${product.id}`}>
         <img src={product.image} alt={product.title} />
-      </div>
+      </NavLink>
       <div>
         <span className={style.price}>{product.price}$</span>
       </div>
       <div>
         <p>{product.description}</p>
       </div>
-      <button onClick={() => addToBasket(product)}>Add to Cart</button>
+      <AddToBasket product={product} addToBasket={addToBasket}/>
     </div>
   )
 }

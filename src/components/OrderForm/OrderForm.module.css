@@ -1,0 +1,40 @@
+.form {
+    border-top: 1px solid rgba(128, 128, 128, 0.393);
+    padding: 50px 0;
+
+    h2 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 100;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+        gap: 5px;
+    }
+
+    .input {
+        padding: 10px;
+    }
+
+    .orderButton {
+        background-color: #2f9d9d;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 255px;
+    }
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

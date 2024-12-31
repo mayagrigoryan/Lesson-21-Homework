@@ -1,10 +1,10 @@
 import React from 'react'
 import Products from '../../components/Products/Products'
 
-function HomePage({products, addToBasket}) {
+function HomePage({products, addToBasket, isFetching}) {
   return (
     <div>
-        <Products products={products} addToBasket={addToBasket}/>
+        <Products isFetching={isFetching} products={products} addToBasket={addToBasket}/>
     </div>
   )
 }
