@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { instance } from '../../App'
 
 import style from './ProductPage.module.css'
 import Loading from '../../components/Loading/Loading'
 import AddToBasket from '../../components/AddToBasket/AddToBasket'
+import { MyContext } from '../../context/context'
 
-function ProductPage({ isFetching, loading, addToBasket }) {
+function ProductPage() {
+    const { isFetching, loading } = useContext(MyContext);
     const [product, setProduct] = useState(null)
     const { id } = useParams()
     useEffect(() => {
@@ -28,7 +30,7 @@ function ProductPage({ isFetching, loading, addToBasket }) {
                         <p>{product?.description}</p>
                         <div>
                             <span>{product?.price}$</span>
-                            <AddToBasket product={product} addToBasket={addToBasket}/>
+                            <AddToBasket product={product}/>
                         </div>
                     </div>
                 </div>

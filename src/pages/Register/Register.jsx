@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Formik, Field, Form } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import style from '../Login/Login.module.css'
 import * as Yup from 'yup'
+import { MyContext } from '../../context/context'
 
-function Register({ addUsers }) {
+function Register() {
+    const { addUsers } = useContext(MyContext);
     const navigate = useNavigate()
 
     const validUser = (user) => {

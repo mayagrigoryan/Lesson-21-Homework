@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import style from './Product.module.css'
 import AddToBasket from '../AddToBasket/AddToBasket'
+import { MyContext } from '../../context/context'
 
-function Product({ product, addToBasket }) {
+function Product({ product }) {
+  const { addToBasket } = useContext(MyContext);
   const titleLength = 20
   return (
     <div className={style.productContainer}>
@@ -19,7 +21,7 @@ function Product({ product, addToBasket }) {
       <div>
         <p>{product.description}</p>
       </div>
-      <AddToBasket product={product} addToBasket={addToBasket}/>
+      <AddToBasket product={product} addToBasket={addToBasket} />
     </div>
   )
 }

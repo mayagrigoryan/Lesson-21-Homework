@@ -1,13 +1,16 @@
+import { useContext } from 'react';
+import { MyContext } from '../../context/context';
 import Basket from './Basket'
 import OrderForm from '../OrderForm/OrderForm'
 import style from './BasketProduct.module.css'
 
-function BasketProduct({ basket, changeBasket, totalPrice, removeFromBasket }) {
+function BasketProduct() {
+  const { basket, totalPrice } = useContext(MyContext);
   return (
     <div>
       {
         basket.map((product) => {
-          return <Basket removeFromBasket={removeFromBasket} product={product} key={product.id} changeBasket={changeBasket} />
+          return <Basket product={product} key={product.id} />
         })
       }
       {

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import BasketProduct from '../../components/BasketProduct/BasketProduct'
 import { Navigate } from 'react-router-dom'
+import { MyContext } from '../../context/context'
 
-function BasketPage({ basket, changeBasket, totalPrice, removeFromBasket }) {
+function BasketPage() {
+  const { basket } = useContext(MyContext);
   return (
     <div>
       {
@@ -10,7 +12,7 @@ function BasketPage({ basket, changeBasket, totalPrice, removeFromBasket }) {
         ?
         <Navigate to='/'/>
         :
-        <BasketProduct removeFromBasket={removeFromBasket} totalPrice={totalPrice} basket={basket} changeBasket={changeBasket}/>
+        <BasketProduct />
       }
     </div>
   )

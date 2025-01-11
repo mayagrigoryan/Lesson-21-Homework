@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { MyContext } from '../../context/context';
 import style from './BasketProduct.module.css'
 
-function Basket({ product, changeBasket, removeFromBasket }) {
+function Basket({ product }) {
+    const { changeBasket, removeFromBasket } = useContext(MyContext);
     let [count, setCount] = useState(product.count)
 
     const plusCount = () => {

@@ -1,9 +1,9 @@
-import React from 'react'
-import style from './Login.module.css'
-import { useNavigate } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { Formik, Field, Form } from 'formik'
 import * as Yup from 'yup'
+import { MyContext } from '../../context/context'
+import style from './Login.module.css'
 
 const validationSchema = Yup.object({
     email: Yup.string()
@@ -14,17 +14,25 @@ const validationSchema = Yup.object({
         .required('Password is required'),
 });
 
-function Login({ users }) {
-    const navigate = useNavigate()
+function Login() {
+    const { users, setIsLoggedIn, setUser } = useContext(MyContext);
+    const navigate = useNavigate();
+
     const userValidation = (values) => {
         const user = users.find((u) => u.email === values.email)
         if (user) {
             let isActivate = user.password === values.password
             if (isActivate) {
+                setIsLoggedIn(true)
+                setUser(user)
                 navigate(`/profile/${user.id}`, { state: user })
+            } else {
+                alert('Invalid password');
+              }
+            } else {
+              alert('User not found');
             }
         }
-    }
 
     return (
         <div>
